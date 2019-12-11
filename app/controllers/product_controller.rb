@@ -8,6 +8,8 @@ class ProductController < ApplicationController
         @product = Product.find(params[:id])
         @product.update(product_params)    
 
+        flash[:notice] = 'Alterado com sucesso!'
+
         respond_to do |format|
             format.html
             format.js {}

@@ -1,9 +1,10 @@
-<h1>Edit <%= @order.id %> </h1>
-<h3> <%= @order.company_name %> - <%= @order.company_document %> </h3>
+<h3>Pedido: <%= @order.id %> </h1>
+<h5>Empresa: <%= @order.company_name %> - <%= @order.company_document %> </h3>
 
-<%= @order.products.each do |product| %>
-    <h3> ItemA </h3>
+<% @order.products.each do |product| %>
+
     <%= form_for(product, method: :patch, url: product_path(product), :remote => true) do |f| %>
+       <div class="form-row form-inline">
         <div class="form-group">
             <%= f.label :code, 'Código' %>
             <%= f.text_field :code, class: 'form-control' %>
@@ -17,7 +18,7 @@
             <%= f.text_field :price, class: 'form-control' %>            
         </div>
          <%= f.submit 'Enviar', class: "btn btn-default" %>
-
+        </div>
     <% end %>
      
 <% end %>    

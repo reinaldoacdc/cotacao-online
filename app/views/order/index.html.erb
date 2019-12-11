@@ -1,7 +1,13 @@
 
 <% @orders.each do |order| %>
-    <ul>
-      <li> <%= order.id %> <%= order.company_name %> - <%= order.company_document %> </li>
-      <li><%= link_to 'Editar', edit_order_path(order.id) %></li>
-    </ul>
+
+  <table class="table table-striped">
+  <tbody>
+    <tr>
+      <th scope="row"> <%= order.id %> </th>
+      <td><%= order.company_name %> - <%= order.company_document %></td>
+      <td><%= link_to 'Editar', edit_order_path(order.id) %></td>
+    </tr>
+  </tbody>  
+  </table>
   <% end %>
