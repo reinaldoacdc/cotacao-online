@@ -7,6 +7,11 @@ class ProductController < ApplicationController
     def update
         @product = Product.find(params[:id])
         @product.update(product_params)    
+
+        respond_to do |format|
+            format.html
+            format.js {}
+        end
     end
 
     private
