@@ -1,0 +1,7 @@
+
+<% @orders.each do |order| %>
+    <ul>
+      <li> <%= order.id %> <%= order.company_name %> - <%= order.company_document %> </li>
+      <li><%= link_to 'Editar', edit_order_path(order.id) %></li>
+    </ul>
+  <% end %>
