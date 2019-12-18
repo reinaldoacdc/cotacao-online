@@ -19,7 +19,7 @@ $( document ).ready(function() {
                    product: (data.product)
                 },
                 success: function(result){
-                    console.log('sucess');
+                    toastr.success(`Produto ${element.product_code.value} alterado`, '', { closeButton: true, progressBar: true })
                 }});
         })
 
