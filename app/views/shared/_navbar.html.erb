@@ -1,17 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to 'Cotação Online', root_path, :class => 'navbar-brand' %>
+
+  
+
+  <%= link_to image_tag("logo_cotacao.png", width: 300, height: 80), root_path, :class => 'navbar-brand' %>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto">
     <% if supplier_signed_in? %>
-      <li class="nav-item"> <%= link_to 'Edit profile', edit_supplier_registration_path, :class => 'nav-link' %> </li>
+      <li class="nav-item"> <%= link_to "Meu Perfil", edit_supplier_registration_path, :class => 'nav-link' %> </li>
       <li class="nav-item"> <%= link_to "Logout", destroy_supplier_session_path, method: :delete, :class => 'nav-link'  %> </li>
       <li class="nav-item"> <%= link_to "Cotações", order_index_path, :class => 'nav-link'  %> </li>
     <% else %>
-      <li class="nav-item"><%= link_to "Sign up", new_supplier_registration_path, :class => 'nav-link'  %> </li>
+      <li class="nav-item"><%= link_to "Cadastrar-se", new_supplier_registration_path, :class => 'nav-link'  %> </li>
       <li class="nav-item"><%= link_to "Login", new_supplier_session_path, :class => 'nav-link'  %> </li>
     <% end %>
     </ul>
