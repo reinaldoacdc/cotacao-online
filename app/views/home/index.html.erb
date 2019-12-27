@@ -1,5 +1,24 @@
 <% if supplier_signed_in? %>
     <h1>Bem-vindo <%= current_supplier.name %></h1>
+    <div class="card-deck">
+        <div class="card w-50">
+        <div class="card-body">
+            <h5 class="card-title">Usuários</h5>
+            <p class="card-text">Você possui X usuários cadastrados.</p>
+            <a href="#" class="btn btn-primary">Listar Usuários</a>
+        </div>
+        </div>
+
+        <div class="card w-50">
+        <div class="card-body">
+            <h5 class="card-title">Cotações</h5>
+            <p class="card-text">Existem X cotações em aberto.</p>
+            <a href="#" class="btn btn-primary">Listar Cotações</a>
+        </div>
+        </div>
+
+    </div>
+
 <% else%>
     <h1> Faça o login </h1>
 <% end %>    
