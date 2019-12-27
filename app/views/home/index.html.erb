@@ -1,5 +1,5 @@
 <% if supplier_signed_in? %>
-    <h1>Bem-vindo</h1>
+    <h1>Bem-vindo <%= current_supplier.name %></h1>
 <% else%>
     <h1> Faça o login </h1>
 <% end %>    
