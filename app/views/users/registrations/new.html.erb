@@ -23,9 +23,14 @@
 
  <div class="field">
     <%= f.label :supplier_id %><br />
-    <%= f.text_field :supplier_id, value: current_supplier.id %>
+    <%= f.hidden_field :supplier_id, value: current_supplier.id %>
   </div>
-  
+
+ <div class="field">
+    <%= f.label :role %><br />
+    <%= f.select :supplier_id, options_for_select(User::roles) %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>
