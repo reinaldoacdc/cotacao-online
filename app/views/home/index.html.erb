@@ -1,5 +1,5 @@
-<% if supplier_signed_in? %>
-    <h1>Bem-vindo <%= current_supplier.name %></h1>
+<% if user_signed_in? %>
+    <h1>Bem-vindo <%= current_user.email %></h1>
     <div class="card-deck">
         <div class="card w-50">
         <div class="card-body">
