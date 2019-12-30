@@ -3,17 +3,18 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]  
+  prepend_before_action :require_no_authentication, only: [:cancel]
   
   # GET /resource/sign_up
-  def new
-    p "******aaaaa*******************new***************"
-    super
-  end
+  #def new
+  #  p "******aaaaa*******************new***************"
+  #  super
+  #end
 
   # POST /resource
-  def create
-    super
-  end
+  #def create
+  #  super
+  #end
 
   # GET /resource/edit
   # def edit

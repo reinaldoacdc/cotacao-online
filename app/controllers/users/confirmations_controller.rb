@@ -17,7 +17,12 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   #   super
   # end
 
-  # protected
+  protected
+
+  def after_confirmation_path_for(resource_name, resource)
+    token = resource.send(:set_reset_password_token)
+    edit_password_path(resource, reset_password_token: token)
+  end  
 
   # The path used after resending confirmation instructions.
   # def after_resending_confirmation_instructions_path_for(resource_name)
