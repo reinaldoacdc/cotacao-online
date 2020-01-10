@@ -1,4 +1,5 @@
 class OrderController < ApplicationController
+    skip_before_action :verify_authenticity_token
 
 
     def index
@@ -22,10 +23,27 @@ class OrderController < ApplicationController
         end
     end
 
+    def create
+        @order = Order.new(order_params)
+        p "**********************"
+        p order_params.to_h
+        p "*********************"
+        p params[:products]
+        #@order.products << params[:products]
+
+
+        respond_to do |format|
+            if @order.save
+                format.json {render json: @order.to_json, status: 'OK' }                
+            else 
+                format.json {render json: @order.errors, status: 'ERROR'}
+            end
+        end
+    end
 
     private
 
-    def order_params
-        params.require(:property).permit(:company_name, :company_document)
+    def order_params        
+        params.require(:order).permit(:id, :created_at, :updated_at, :company_name, :company_document, :products_attributes => [:id, :created_at, :updated_at, :order_id, :code, :description, :quantity, :price, :observation] )
     end    
 end
