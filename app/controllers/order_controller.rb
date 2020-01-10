@@ -14,6 +14,13 @@ class OrderController < ApplicationController
         @order.update(order_params)
     end
 
+    def show
+        @order = Order.find(params[:id])
+
+        respond_to do |format|
+            format.json {render json: @order.to_json(:include => :products)}
+        end
+    end
 
 
     private
