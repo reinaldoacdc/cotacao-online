@@ -8,8 +8,10 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
-global.toastr = require("toastr")
 import "../stylesheets/application.scss"
+import './src/application.scss'
+import toastr from 'toastr'
+window.toastr = toastr
 global.tablesort = require("tablesort")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
