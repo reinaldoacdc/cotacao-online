@@ -1,24 +1,11 @@
-# README
+# Cotação-Online
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Cotação de Pedido de Compra.
 
-Things you may want to cover:
+## Primeiros passos
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  - Criar Supplier -> Supplier.create(email: '', name'')
+  - Criar UserAdmin -> User.Create(supplier_id: X, role: 1)
+  
+A criação da empresa principal NÃO é automática,deve ser manual.
+  
